@@ -1,9 +1,9 @@
 {
-  "name": "angular-seed",
+  "name": "channel-engine-multiview",
   "private": true,
-  "version": "0.0.0",
-  "description": "A starter project for AngularJS",
-  "repository": "https://github.com/angular/angular-seed",
+  "version": "0.1.0",
+  "description": "A multiview frontend for Eyevinn Channel Engine",
+  "repository": "https://github.com/Eyevinn/channel-engine-multiview",
   "license": "MIT",
   "devDependencies": {
     "bower": "^1.7.7",
