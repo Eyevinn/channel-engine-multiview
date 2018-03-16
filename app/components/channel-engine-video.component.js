@@ -12,7 +12,7 @@ angular.module('channelEngineMultiview')
 			self.highlighted = false;
 			self.sessionId = null;
 			self.selected = false;
-			self.playlistId = 'random';
+			//self.playlistId = 'random';
 			// self.hls = new Hls({capLevelToPlayerSize: true, abrBandWidthUpFactor: 0.001});
 			self.hls = new Hls();
 			self.videoElement = $element.find('video')[0];
@@ -28,10 +28,10 @@ angular.module('channelEngineMultiview')
 				var uri;
 				var eventStreamUri;
 				if (params['dev']) {
-					uri = 'http://localhost:8000/live/master.m3u8' + '?' + Math.random(); // adding random number in query so that the browser doesn't cache the m3u8 file -> this way a new session is always created
+					uri = 'http://localhost:8000/live/master.m3u8';
 					eventStreamUri = 'http://localhost:8000/eventstream';
 				} else {
-					uri = 'https://ott-channel-engine.herokuapp.com/live/master.m3u8' + '?' + Math.random();
+					uri = 'https://ott-channel-engine.herokuapp.com/live/master.m3u8';
 					eventStreamUri = 'https://ott-channel-engine.herokuapp.com/eventstream';
 				}
 				initiatePlayer(self, uri, self.videoElement, self.playlistId, params['noresume'], params['id'])
