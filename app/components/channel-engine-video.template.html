@@ -1,0 +1,11 @@
+<div ng-class="{ 'selected-video': $ctrl.selected }" ng-mouseenter="$ctrl.showVideoDetails()" ng-mouseleave="$ctrl.hideVideoDetails()">
+	<video ng-click="$ctrl.toggleMuted()" width="480" height="270"></video>
+	<!-- <div>
+		<select ng-model="$ctrl.playlistId" ng-change="$ctrl.updatePlaylist()">
+			<option value="random">Random</option>
+			<option value="skaneby">Skaneby</option>
+			<option value="stswe17">StreamingTech Sweden 2017</option>
+		</select>
+	</div> -->
+	<!-- <p ng-click="$ctrl.testOutput()" style="color: white;">**{{$ctrl.videoindex}}** {{$ctrl.sessionId}}--</p> -->
+</div>
