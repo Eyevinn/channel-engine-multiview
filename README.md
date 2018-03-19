@@ -11,4 +11,4 @@ Then open the following url in your browser: http://localhost:8200
 
 ## HLS stream source
 By default, the streams m3u8 files are retrieved from https://ott-channel-engine.herokuapp.com/eventstream.
-In order to use a local Channel Engine instead, use url http://localhost:8200?dev. The page will use url http://localhost:8000/live/master.m3u8 to reach the Channel Engine.
+In order to use a local Channel Engine instead, use url http://localhost:8200/#?dev. The page will use url http://localhost:8000/live/master.m3u8 to reach the Channel Engine.
