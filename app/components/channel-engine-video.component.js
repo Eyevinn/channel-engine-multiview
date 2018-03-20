@@ -5,6 +5,9 @@ angular.module('channelEngineMultiview')
 		templateUrl: 'components/channel-engine-video.template.html',
     bindings: {
       videoindex: '@',
+      muted: '<',
+      mute:'&',
+      unmute:'&',
     },
 		controller: ['$scope', '$element', '$location', function ChannelEngineVideoController($scope, $element, $location) {
 			var self = this;
@@ -15,6 +18,9 @@ angular.module('channelEngineMultiview')
 			self.$postLink = function() {
 				self.playStream();
 			};
+      self.$onChanges = function(changesObj) {
+        self._muteOrUnmuteAudio(changesObj);
+      };
 
 			self.playStream = function() {
 				var hlsStreamUri;
@@ -35,10 +41,6 @@ angular.module('channelEngineMultiview')
 					console.log(err);
 					displayErrorDlg(err);
 				});
-			};
-
-			self.toggleMuted = function() {
-				self.videoElement.muted = !self.videoElement.muted;
 			};
 
       self._initiatePlayer = function(hlsUri) {
@@ -95,6 +97,12 @@ angular.module('channelEngineMultiview')
 
       self._isInDevMode = function() {
         return $location.search().dev;
+      };
+
+      self._muteOrUnmuteAudio = function(changes) {
+        if (changes.muted) {
+          self.videoElement.muted = changes.muted.currentValue;
+        }
       };
 
 		}],
