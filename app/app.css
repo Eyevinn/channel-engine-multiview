@@ -28,10 +28,29 @@ body {
 }
 
 .video-container {
-	//margin-left: 1em;
 	border: 1px solid grey;
+  position:relative;
+  background-color: #000;
 }
 
-.selected-video {
-  border: 2px solid red;
+.video-container:hover {
+  z-index: 100;
+}
+
+.video-container.selected {
+  border: 4px solid red;
+}
+
+.video-container .audio-icon {
+  display: none;
+}
+
+.video-container:hover .audio-icon {
+  display: block;
+  font-size: 4em;
+  color: #999;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
 }
